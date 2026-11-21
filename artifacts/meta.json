@@ -1,0 +1,62 @@
+{
+ "beta": 0.0,
+ "labels": [
+  "négatif",
+  "neutre",
+  "positif"
+ ],
+ "n_communities": 13,
+ "sentiment": [
+  {
+   "modèle": "TF-IDF + régression logistique",
+   "F1 macro": 0.692,
+   "accuracy": 0.8,
+   "F1 neutre": 0.566
+  },
+  {
+   "modèle": "DistilBERT fine-tuné",
+   "F1 macro": 0.718,
+   "accuracy": 0.808,
+   "F1 neutre": 0.572
+  }
+ ],
+ "rating": [
+  {
+   "index": "Moyenne globale",
+   "RMSE": 1.109,
+   "MAE": 0.866
+  },
+  {
+   "index": "Moyenne + biais user/produit",
+   "RMSE": 0.997,
+   "MAE": 0.781
+  },
+  {
+   "index": "GraphSAGE (résidu sur la baseline)",
+   "RMSE": 0.997,
+   "MAE": 0.773
+  }
+ ],
+ "ranking": [
+  {
+   "index": "Popularité",
+   "Recall@10": 0.1392,
+   "NDCG@10": 0.0754
+  },
+  {
+   "index": "GraphSAGE (note prédite)",
+   "Recall@10": 0.0099,
+   "NDCG@10": 0.0049
+  },
+  {
+   "index": "LightGCN + BPR",
+   "Recall@10": 0.199,
+   "NDCG@10": 0.1185
+  },
+  {
+   "index": "BPR + popularité (beta=0)",
+   "Recall@10": 0.199,
+   "NDCG@10": 0.1185
+  }
+ ]
+}
